@@ -24,8 +24,8 @@
             <ImageView
                 android:id="@+id/iv_home"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
                 android:background="@mipmap/bid02"/>
             <TextView
                 android:id="@+id/tv_hoem"
@@ -46,8 +46,8 @@
             <ImageView
                 android:id="@+id/iv_touzi"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
                 android:background="@mipmap/bid04"/>
             <TextView
                 android:id="@+id/tv_touzi"
@@ -68,8 +68,8 @@
             <ImageView
                 android:id="@+id/iv_asset"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
                 android:background="@mipmap/bid06"/>
             <TextView
                 android:id="@+id/tv_asset"
@@ -90,8 +90,8 @@
             <ImageView
                 android:id="@+id/iv_more"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
                 android:background="@mipmap/bid08"/>
             <TextView
                 android:id="@+id/tv_more"

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.ilmare.p2pmoney.Common.AppManager;
 import com.ilmare.p2pmoney.Fragement.AssetFragment;
 import com.ilmare.p2pmoney.Fragement.HomeFragment;
 import com.ilmare.p2pmoney.Fragement.MoreFragment;
@@ -66,8 +67,10 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
+        int x=3/0;
         supportFragmentManager = getSupportFragmentManager();
         llHome.callOnClick();
+        AppManager.getInstance().addActivity(this);
     }
 
     @OnClick({R.id.ll_touzi, R.id.ll_asset, R.id.ll_more, R.id.ll_home})
@@ -165,4 +168,10 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppManager.getInstance().removeActivity(this);
+    }
 }
