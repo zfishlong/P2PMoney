@@ -67,7 +67,6 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
-        int x=3/0;
         supportFragmentManager = getSupportFragmentManager();
         llHome.callOnClick();
         AppManager.getInstance().addActivity(this);
