@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include layout="@layout/common_title"/>
 
@@ -26,13 +26,13 @@
                     android:layout_height="match_parent">
                 </android.support.v4.view.ViewPager>
 
-                <Button
+                <com.viewpagerindicator.CirclePageIndicator
                     android:id="@+id/circle_barner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:padding="10dp">
-                </Button>
+                </com.viewpagerindicator.CirclePageIndicator>
             </FrameLayout>
 
 
@@ -101,17 +101,18 @@
 
                 <!--#18b4ed-->
                 <!-- 圆环进度
-                app:roundColor="@android:color/darker_gray"
-                    app:roundProgressColor="@android:color/holo_red_dark"
-                    app:roundWidth="10dp"
-                    app:textColor="#18b4ed"
-                    app:textSize="20sp"-->
-                <Button
+                -->
+                <com.ilmare.p2pmoney.View.RoundProgress
                     android:id="@+id/p_progresss"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
+                    app:roundColor="@android:color/darker_gray"
+                    app:roundProgressColor="@android:color/holo_red_dark"
+                    app:roundWidth="10dp"
+                    app:textColor="#18b4ed"
+                    app:textSize="20sp"
                     >
-                </Button>
+                </com.ilmare.p2pmoney.View.RoundProgress>
 
             </RelativeLayout>
 

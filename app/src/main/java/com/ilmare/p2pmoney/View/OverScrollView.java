@@ -15,10 +15,9 @@ import android.widget.ScrollView;
  * 创建时间：6/9/2016 10:39 AM
  * 版本号： 1.0
  * 版权所有(C) 6/9/2016
- * 描述：
+ * 描述：自定义可以下拉的ScrollView
  * ===============================
  */
-
 public class OverScrollView extends ScrollView {
     public OverScrollView(Context context) {
         super(context);
@@ -76,7 +75,7 @@ public class OverScrollView extends ScrollView {
                         if (normal.isEmpty()) {
                             normal.set(child.getLeft(), child.getTop(), child.getRight(), child.getBottom());
                         }
-                        child.layout(child.getLeft(), child.getTop() - detailY / 2, child.getRight(), child.getBottom() - detailY / 2);
+                        child.layout(child.getLeft(), child.getTop() - detailY / 3, child.getRight(), child.getBottom() - detailY / 3);
                     }
                     break;
                 case MotionEvent.ACTION_UP:
@@ -121,13 +120,11 @@ public class OverScrollView extends ScrollView {
     }
 
     private boolean isNeedMove() {
-
         int offset = child.getMeasuredHeight() - getHeight();
         int scrollY = getScrollY();
         if (scrollY == 0 || scrollY == offset) {
             return true;
         }
         return false;
-
     }
 }
