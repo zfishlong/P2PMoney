@@ -29,7 +29,6 @@ import butterknife.InjectView;
  * 描述：
  * ===============================
  */
-
 public class TouziFragment extends BaseFragment {
 
     @InjectView(R.id.title_left)
@@ -61,8 +60,9 @@ public class TouziFragment extends BaseFragment {
     protected void initData(String content) {
         //初始化数据
         fragmentManager = getFragmentManager();
-        fragments.add(new HotProductFragment());
+
         fragments.add(new ListProductFragment());
+        fragments.add(new HotProductFragment());
         fragments.add(new RecomanderFragment());
 
         pager.setAdapter(new MyViewPagerAdapter(fragmentManager));
