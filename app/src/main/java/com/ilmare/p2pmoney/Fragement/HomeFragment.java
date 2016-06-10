@@ -41,7 +41,7 @@ import butterknife.InjectView;
  * ===============================
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
 
     @InjectView(R.id.title_left)
@@ -67,67 +67,56 @@ public class HomeFragment extends Fragment {
     private Index index;
     private MyBanerAdapter adapter;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = View.inflate(getContext(), R.layout.fragment_home, null);
-        ButterKnife.inject(this, view);
 
-        return view;
+    @Override
+    public int getLayoutID() {
+        return R.layout.fragment_home;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initTitleBar();
-        initData();
+    protected String getFragmentUrl() {
+        return AppNetConfig.INDEX;
     }
 
+    @Override
+    protected void initData(String content) {
+        index = new Index();
+        JSONObject jsonObject = JSON.parseObject(content);
+        String proInfo = jsonObject.getString("proInfo");
+        ProInfo info = JSON.parseObject(proInfo, ProInfo.class);
 
-    private void initData() {
-        //加载数据
-        AsyncHttpClient httpClient = new AsyncHttpClient();
-        httpClient.get(getActivity(), AppNetConfig.INDEX, new AsyncHttpResponseHandler() {
+        String imagArra = jsonObject.getString("imageArr");
+        ArrayList<Image> images = (ArrayList<Image>) JSON.parseArray(imagArra, Image.class);
+
+        index.setImageArr(images);
+        index.setProInfo(info);
+
+        adapter = new MyBanerAdapter();
+        vpBarner.setAdapter(adapter);
+        circleBarner.setViewPager(vpBarner);
+
+        final int progress = Integer.parseInt(index.getProInfo().getProgress());
+
+        new Thread() {
             @Override
-            public void onSuccess(String content) {
-
-                index = new Index();
-                JSONObject jsonObject = JSON.parseObject(content);
-                String proInfo = jsonObject.getString("proInfo");
-                ProInfo info = JSON.parseObject(proInfo, ProInfo.class);
-
-                String imagArra = jsonObject.getString("imageArr");
-                ArrayList<Image> images = (ArrayList<Image>) JSON.parseArray(imagArra, Image.class);
-
-                index.setImageArr(images);
-                index.setProInfo(info);
-
-                adapter = new MyBanerAdapter();
-                vpBarner.setAdapter(adapter);
-                circleBarner.setViewPager(vpBarner);
+            public void run() {
+                int i = 50;
+                while (i != progress) {
+                    i++;
+                    pProgresss.setProgress(i);
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-
-            @Override
-            public void onFailure(Throwable error, String content) {
-                super.onFailure(error, content);
-
-            }
-        });
-
-
+        }.start();
     }
 
-
-    private void initTitleBar() {
+    public  void initTitleBar() {
         titleLeft.setVisibility(View.INVISIBLE);
         titleRight.setVisibility(View.INVISIBLE);
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
     }
 
 
@@ -155,7 +144,6 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-
             container.removeView((View) object);
         }
     }
