@@ -62,8 +62,8 @@ public class TouziFragment extends BaseFragment {
         fragmentManager = getFragmentManager();
 
         fragments.add(new ListProductFragment());
-        fragments.add(new HotProductFragment());
         fragments.add(new RecomanderFragment());
+        fragments.add(new HotProductFragment());
 
         pager.setAdapter(new MyViewPagerAdapter(fragmentManager));
         tabIndictor.setViewPager(pager);

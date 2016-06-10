@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="产品推荐"/>
+
+    <com.ilmare.p2pmoney.View.randomLayout.StellarMap
+        android:id="@+id/stellarMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.ilmare.p2pmoney.View.randomLayout.StellarMap>
 
 </LinearLayout>
 
