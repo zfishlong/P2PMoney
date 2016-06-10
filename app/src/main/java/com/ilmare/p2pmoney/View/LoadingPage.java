@@ -102,7 +102,7 @@ public abstract class LoadingPage extends FrameLayout {
             if(PAGE_CURRENT_STATE==PAGE_SUCCESS_STATE){
 
                 if(successView==null) {
-                    successView=UIUtils.getXmlView(getLayoutId());
+                    successView=View.inflate(mContext, getLayoutId(), null);;
                     addView(successView,lp);
                     onCreateSuccessView(successView);
                 }

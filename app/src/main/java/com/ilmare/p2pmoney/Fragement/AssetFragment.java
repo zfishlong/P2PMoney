@@ -32,6 +32,7 @@ public class AssetFragment extends BaseFragment {
     @InjectView(R.id.title_right)
     ImageView titleRight;
 
+
     @Override
     public int getLayoutID() {
         return R.layout.fragment_asset;
@@ -47,7 +48,7 @@ public class AssetFragment extends BaseFragment {
 
     @Override
     protected void initData(String content) {
-        
+
     }
 
 
