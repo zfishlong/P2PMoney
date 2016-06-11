@@ -12,13 +12,14 @@ import android.widget.TextView;
 
 import com.ilmare.p2pmoney.BarChatActivity;
 import com.ilmare.p2pmoney.Beans.UserInfo;
+import com.ilmare.p2pmoney.ChongZhiActivity;
 import com.ilmare.p2pmoney.Common.AppNetConfig;
 import com.ilmare.p2pmoney.LineChartActivity;
 import com.ilmare.p2pmoney.LoginActivity;
+import com.ilmare.p2pmoney.PieChartActivity;
 import com.ilmare.p2pmoney.R;
 import com.ilmare.p2pmoney.UserInfoActivity;
 import com.ilmare.p2pmoney.Utils.BitMapUtil;
-import com.ilmare.p2pmoney.ChongZhiActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
@@ -48,6 +49,7 @@ public class AssetFragment extends BaseFragment {
 
     @InjectView(R.id.imageView1)
     ImageView imageView1;
+
     @InjectView(R.id.icon_time)
     RelativeLayout iconTime;
     @InjectView(R.id.textView11)
@@ -142,6 +144,7 @@ public class AssetFragment extends BaseFragment {
                 getActivity().startActivity(new Intent(getActivity(), BarChatActivity.class));
                 break;
             case R.id.ll_zichang:
+                getActivity().startActivity(new Intent(getActivity(), PieChartActivity.class));
                 break;
             case R.id.ll_zhanquan:
                 break;

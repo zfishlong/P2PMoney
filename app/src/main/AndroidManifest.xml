@@ -40,6 +40,7 @@
         <activity android:name=".ChongZhiActivity"></activity>
         <activity android:name=".LineChartActivity"></activity>
         <activity android:name=".BarChatActivity"></activity>
+        <activity android:name=".PieChartActivity"></activity>
 
         <!-- 集成支付宝组件声明-->
         <activity
