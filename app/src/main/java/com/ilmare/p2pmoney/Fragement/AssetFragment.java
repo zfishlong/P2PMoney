@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ilmare.p2pmoney.BarChatActivity;
 import com.ilmare.p2pmoney.Beans.UserInfo;
 import com.ilmare.p2pmoney.Common.AppNetConfig;
 import com.ilmare.p2pmoney.LineChartActivity;
@@ -138,6 +139,7 @@ public class AssetFragment extends BaseFragment {
                 getActivity().startActivity(new Intent(getActivity(), LineChartActivity.class));
                 break;
             case R.id.ll_touzi_zhiguan:
+                getActivity().startActivity(new Intent(getActivity(), BarChatActivity.class));
                 break;
             case R.id.ll_zichang:
                 break;
