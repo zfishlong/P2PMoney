@@ -37,7 +37,7 @@ import butterknife.OnClick;
  * ===============================
  */
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 
     @InjectView(R.id.title_left)
     ImageView titleLeft;
@@ -55,18 +55,19 @@ public class LoginActivity extends Activity {
     private SharedPreferences sharedPreferences;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ButterKnife.inject(this);
 
-        initTitleBar();
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    protected void initData() {
         sharedPreferences = getSharedPreferences("config", Context.MODE_PRIVATE);
     }
 
-
-    private void initTitleBar() {
+    @Override
+    protected void initTitleBar() {
         titleTv.setText("登录");
         titleLeft.setVisibility(View.INVISIBLE);
         titleRight.setVisibility(View.INVISIBLE);
