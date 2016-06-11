@@ -38,6 +38,7 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".UserInfoActivity"> </activity>
         <activity android:name=".ChongZhiActivity"></activity>
+        <activity android:name=".LineChartActivity"></activity>
 
 
         <!-- 集成支付宝组件声明-->

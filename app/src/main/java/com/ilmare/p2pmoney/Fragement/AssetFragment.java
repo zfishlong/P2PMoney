@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.ilmare.p2pmoney.Beans.UserInfo;
 import com.ilmare.p2pmoney.Common.AppNetConfig;
+import com.ilmare.p2pmoney.LineChartActivity;
 import com.ilmare.p2pmoney.LoginActivity;
 import com.ilmare.p2pmoney.R;
 import com.ilmare.p2pmoney.UserInfoActivity;
@@ -134,6 +135,7 @@ public class AssetFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_touzi:
+                getActivity().startActivity(new Intent(getActivity(), LineChartActivity.class));
                 break;
             case R.id.ll_touzi_zhiguan:
                 break;
