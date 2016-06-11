@@ -59,11 +59,11 @@ public class PieChartActivity extends BaseActivity {
         chart.setUsePercentValues(true);
 
         PieData mChartData = generateDataPie();
-//        mChartData.setValueFormatter(new PercentFormatter());
+//      mChartData.setValueFormatter(new PercentFormatter());
         mChartData.setValueTextSize(14f);
         mChartData.setValueTextColor(Color.RED);
         // set data
-        chart.setData((PieData) mChartData);
+        chart.setData(mChartData);
 
         //饼图指示器绘制
         Legend l = chart.getLegend();
@@ -91,7 +91,6 @@ public class PieChartActivity extends BaseActivity {
         }
 
         PieDataSet d = new PieDataSet(entries, "");
-
         // space between slices
         //绘制图表数据集合的时候指定属性
         d.setSliceSpace(1f);

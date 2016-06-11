@@ -18,6 +18,7 @@ import com.ilmare.p2pmoney.LineChartActivity;
 import com.ilmare.p2pmoney.LoginActivity;
 import com.ilmare.p2pmoney.PieChartActivity;
 import com.ilmare.p2pmoney.R;
+import com.ilmare.p2pmoney.ToggleActivity;
 import com.ilmare.p2pmoney.UserInfoActivity;
 import com.ilmare.p2pmoney.Utils.BitMapUtil;
 import com.squareup.picasso.Picasso;
@@ -147,6 +148,7 @@ public class AssetFragment extends BaseFragment {
                 getActivity().startActivity(new Intent(getActivity(), PieChartActivity.class));
                 break;
             case R.id.ll_zhanquan:
+                getActivity().startActivity(new Intent(getActivity(), ToggleActivity.class));
                 break;
             case R.id.chongzhi:
                 getActivity().startActivity(new Intent(getActivity(), ChongZhiActivity.class));
