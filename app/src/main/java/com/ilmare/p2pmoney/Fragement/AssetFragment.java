@@ -4,11 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,10 +16,10 @@ import com.ilmare.p2pmoney.LoginActivity;
 import com.ilmare.p2pmoney.R;
 import com.ilmare.p2pmoney.UserInfoActivity;
 import com.ilmare.p2pmoney.Utils.BitMapUtil;
+import com.ilmare.p2pmoney.ChongZhiActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
@@ -133,7 +130,7 @@ public class AssetFragment extends BaseFragment {
         getActivity().startActivity(intent);
     }
 
-    @OnClick({R.id.ll_touzi, R.id.ll_touzi_zhiguan, R.id.ll_zichang, R.id.ll_zhanquan})
+    @OnClick({R.id.ll_touzi,R.id.chongzhi,R.id.ll_touzi_zhiguan, R.id.ll_zichang, R.id.ll_zhanquan})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_touzi:
@@ -143,6 +140,9 @@ public class AssetFragment extends BaseFragment {
             case R.id.ll_zichang:
                 break;
             case R.id.ll_zhanquan:
+                break;
+            case R.id.chongzhi:
+                getActivity().startActivity(new Intent(getActivity(), ChongZhiActivity.class));
                 break;
         }
     }

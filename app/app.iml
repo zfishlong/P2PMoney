@@ -94,7 +94,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-23.3.0" level="project" />
+    <orderEntry type="library" exported="" name="alipaysdk" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-master" level="project" />
+    <orderEntry type="library" exported="" name="alipayutdid" level="project" />
+    <orderEntry type="library" exported="" name="alipaysecsdk" level="project" />
     <orderEntry type="library" exported="" name="butterknife-5.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="fastjson-1.2.4" level="project" />
