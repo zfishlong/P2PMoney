@@ -5,7 +5,7 @@ public interface AppNetConfig {
 
     String HOST = "192.168.56.1";
 
-    String BASEURL = "http://" + HOST + ":8080/P2PInvest/";
+    String BASEURL = "http://ilmare.site/P2PInvest/";
 
     String LOGIN = BASEURL + "login";
 

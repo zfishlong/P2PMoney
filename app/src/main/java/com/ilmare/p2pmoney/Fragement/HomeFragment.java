@@ -1,11 +1,7 @@
 package com.ilmare.p2pmoney.Fragement;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,14 +17,11 @@ import com.ilmare.p2pmoney.Common.AppNetConfig;
 import com.ilmare.p2pmoney.R;
 import com.ilmare.p2pmoney.View.OverScrollView;
 import com.ilmare.p2pmoney.View.RoundProgress;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
@@ -137,6 +130,8 @@ public class HomeFragment extends BaseFragment {
             ImageView imageView = new ImageView(getActivity());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             String imageUrl = index.getImageArr().get(position).getIMAURL();
+            System.out.println(imageUrl);
+            imageUrl=imageUrl.replace("192.168.56.1:8080","ilmare.site");
             Picasso.with(getActivity()).load(imageUrl).into(imageView);
             container.addView(imageView);
             return imageView;
